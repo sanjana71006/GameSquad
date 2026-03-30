@@ -167,7 +167,7 @@ const CrunchMatch = () => {
     // Save backend progress for P1
     if (token) {
       let lvl = sr.difficulty === 'easy' ? 1 : (sr.difficulty === 'medium' ? 3 : 5);
-      fetch('http://localhost:5000/api/games/progress', {
+      fetch('/api/games/progress', {
         method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({ gameId: 'crunch-match', level: lvl, score: p1.score, timeToComplete: Math.round((sr.maxTimeMs - sr.timeLeftMs)/1000) || 1, result: 'win', accuracy: accuracy(p1) })
       }).catch(()=>{});

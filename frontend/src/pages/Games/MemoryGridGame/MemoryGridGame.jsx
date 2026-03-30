@@ -86,7 +86,7 @@ const MemoryGridGame = () => {
     const accuracy = Math.floor((correctGuesses / config.targetCount) * 100);
 
     try {
-      await fetch('http://localhost:5000/api/games/progress', {
+      await fetch('/api/games/progress', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({
